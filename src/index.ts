@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
-import { fibonacci } from './fibonacci'; // Ensure the path is correct
-import { getBalancedSubstrings } from './balancedSubstring'; // Ensure the path is correct
-import { migrateRings } from './migrateRings'; // Ensure the path is correct
+import { fibonacci } from './fibonacci'; 
+import { getBalancedSubstrings } from './balancedSubstring'; 
+import { migrateRings } from './migrateRings'; 
 
 const app = express();
 const PORT = 5000;
@@ -23,7 +23,7 @@ app.get('/fibonacci/:n', (req: Request<{ n: string }>, res: Response) => {
     res.json({ result });
 });
 
-// Balanced Substring route - Changed to GET
+
 app.get('/balancedSubstring/:S', (req: Request<{ S: string }>, res: Response) => {
     const S = req.params.S;
     if (typeof S !== 'string') {
@@ -33,7 +33,7 @@ app.get('/balancedSubstring/:S', (req: Request<{ S: string }>, res: Response) =>
     res.json({ result });
 });
 
-// Migrate Rings route - Changed to GET
+
 app.get('/migrateRings/:N', (req: Request<{ N: string }>, res: Response) => {
     const N = parseInt(req.params.N, 10);
     if (isNaN(N) || N <= 0) {
